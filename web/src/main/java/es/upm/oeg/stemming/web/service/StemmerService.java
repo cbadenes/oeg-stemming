@@ -4,15 +4,14 @@ import es.upm.oeg.stemming.lib.algorithm.IStemmer;
 import es.upm.oeg.stemming.lib.algorithm.PorterStemmer;
 import es.upm.oeg.stemming.lib.algorithm.SnowballStemmer;
 import es.upm.oeg.stemming.web.domain.Stemmer;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by cbadenes on 09/07/15.
- */
+@Component
 public class StemmerService {
 
     private Map<String,IStemmer> stemmers;

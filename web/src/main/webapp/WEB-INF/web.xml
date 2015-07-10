@@ -22,13 +22,16 @@
 
     <display-name>Stemming</display-name>
 
-    <!-- location of Camel Spring xml files -->
+    <!-- prepare Spring Annotation Configuration-->
+    <context-param>
+        <param-name>contextClass</param-name>
+        <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+    </context-param>
+
+    <!-- location of Spring Configuration Class-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-
-        <!-- to use Java DSL -->
-        <param-value>classpath:camel-config.xml</param-value>
-
+        <param-value>es.upm.oeg.stemming.web.WebContextConfiguration</param-value>
     </context-param>
 
     <!-- the listener that kick-starts Spring -->

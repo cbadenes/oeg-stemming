@@ -2,20 +2,23 @@ package es.upm.oeg.stemming.web.service;
 
 import es.upm.oeg.stemming.lib.domain.Analysis;
 import es.upm.oeg.stemming.lib.domain.Document;
-import lombok.Setter;
+import org.apache.camel.Exchange;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-/**
- * Created by cbadenes on 09/07/15.
- */
+@Component
 public class AnalysisService {
 
-    @Setter
-    private StemmerService stemmerService;
+    @Autowired
+    StemmerService stemmerService;
 
 
-    public Analysis stem(String id, Document doc) throws IOException {
+    public Analysis stem(Exchange exchange) throws IOException {
+
+        Document doc    = (Document) exchange.getIn().getBody();
+        String id       = exchange.getIn().getHeader("id",String.class);
         return stemmerService.getAlgorithm(id).analyze(doc);
     }
 
