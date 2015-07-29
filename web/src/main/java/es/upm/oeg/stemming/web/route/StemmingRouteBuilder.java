@@ -23,7 +23,7 @@ public class StemmingRouteBuilder extends RouteBuilder{
                 .port(8080);
 
         rest("/stemmers").description("Stemmer rest service")
-                .consumes("application/json").produces("application/json")
+                //.consumes("application/json").produces("application/json")
 
                 .get("/").description("List all stemmers").outTypeList(Stemmer.class)
                 .to("bean:stemmerService?method=listStemmers")
