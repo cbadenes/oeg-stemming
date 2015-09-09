@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class SnowballStemmerTest {
 
-    IStemmer stemmer;
+    Analyzer stemmer;
 
     @Before
     public void setup(){

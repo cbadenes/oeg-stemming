@@ -74,7 +74,7 @@
         </init-param>
         <init-param>
             <param-name>api.description</param-name>
-            <param-value>Camel Rest Service with Swagger that provides an Stemming REST service</param-value>
+            <param-value>Camel Rest Service with Swagger that provides a Stemming REST service</param-value>
         </init-param>
         <load-on-startup>2</load-on-startup>
     </servlet>

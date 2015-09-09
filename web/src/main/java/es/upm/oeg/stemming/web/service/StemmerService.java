@@ -1,6 +1,6 @@
 package es.upm.oeg.stemming.web.service;
 
-import es.upm.oeg.stemming.lib.algorithm.IStemmer;
+import es.upm.oeg.stemming.lib.algorithm.Analyzer;
 import es.upm.oeg.stemming.lib.algorithm.PorterStemmer;
 import es.upm.oeg.stemming.lib.algorithm.SnowballStemmer;
 import es.upm.oeg.stemming.web.domain.Stemmer;
@@ -14,7 +14,7 @@ import java.util.Map;
 @Component
 public class StemmerService {
 
-    private Map<String,IStemmer> stemmers;
+    private Map<String,Analyzer> stemmers;
 
 
     public StemmerService(){
@@ -31,22 +31,22 @@ public class StemmerService {
 
     public List<Stemmer> listStemmers(){
         List<Stemmer> stemmerList = new ArrayList<>();
-        for (IStemmer stemmer: stemmers.values()){
+        for (Analyzer stemmer: stemmers.values()){
             stemmerList.add(Stemmer.builder().id(stemmer.id()).name(stemmer.name()).description(stemmer.description()).build());
         }
         return stemmerList;
     }
 
 
-    public Stemmer getStemmer(String id){
+    public es.upm.oeg.stemming.web.domain.Stemmer getStemmer(String id){
         if (!stemmers.containsKey(id)){
             throw new RuntimeException("Stemmer not found");
         }
-        IStemmer stemmer = stemmers.get(id);
+        Analyzer stemmer = stemmers.get(id);
         return Stemmer.builder().id(stemmer.id()).name(stemmer.name()).description(stemmer.description()).build();
     }
 
-    public IStemmer getAlgorithm(String id){
+    public Analyzer getAlgorithm(String id){
         return stemmers.get(id);
     }
 

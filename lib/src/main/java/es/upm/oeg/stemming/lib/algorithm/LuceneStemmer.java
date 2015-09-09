@@ -1,7 +1,6 @@
 package es.upm.oeg.stemming.lib.algorithm;
 
 import com.google.common.base.Strings;
-import com.neovisionaries.i18n.CountryCode;
 import com.neovisionaries.i18n.LanguageCode;
 import es.upm.oeg.stemming.lib.domain.Analysis;
 import es.upm.oeg.stemming.lib.domain.Document;
@@ -24,7 +23,7 @@ import java.util.*;
 /**
  * Created by cbadenes on 09/07/15.
  */
-public abstract class LuceneStemmer implements IStemmer{
+public abstract class LuceneStemmer implements Analyzer {
 
 
     protected static Version LUCENE_VERSION = Version.LUCENE_36;
