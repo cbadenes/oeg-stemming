@@ -1,3 +1,0 @@
-greenballs:1.14
-git:2.4.0
-github:1.12.0
