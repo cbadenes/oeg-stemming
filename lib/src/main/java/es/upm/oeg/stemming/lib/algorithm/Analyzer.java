@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * Created by cbadenes on 09/07/15.
  */
-public interface IStemmer {
+public interface Analyzer {
 
     String id();
 

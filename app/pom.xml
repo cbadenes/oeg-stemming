@@ -4,7 +4,7 @@
 	
 	<parent>
         <groupId>es.upm.oeg</groupId>
-        <artifactId>oeg-stemming-build</artifactId>
+        <artifactId>oeg-stemming</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 	
