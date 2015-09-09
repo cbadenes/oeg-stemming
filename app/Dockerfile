@@ -1,6 +1,7 @@
-FROM jenkins:1.609.1
+FROM tomcat:8-jre8
 
-COPY plugins.txt /usr/share/jenkins/ref/
-#COPY custom.groovy /usr/share/jenkins/ref/init.groovy.d/custom.groovy
+MAINTAINER Carlos Badenes (cbadenes@fi.upm.es)
 
-RUN /usr/local/bin/plugins.sh /usr/share/jenkins/ref/plugins.txt
+RUN wget -O /usr/local/tomcat/webapps/stemming.war https://raw.github.com/cbadenes/oeg-stemming/mvn-repo/es/upm/oeg/oeg-stemming-web/1.0.0/oeg-stemming-web-1.0.0.war
+
+CMD ["catalina.sh", "run"]
