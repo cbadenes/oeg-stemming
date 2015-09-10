@@ -65,5 +65,5 @@ The project is defined as a *[multi-module Maven project](http://books.sonatype.
     docker run -it --rm -p 8080:8080 cbadenes/stemming
     ```  
     
-## Test it!
+## ... and now Test it!
 Check [http://microservices.oeg:8080/stemming](http://microservices.oeg:8080/stemming)
